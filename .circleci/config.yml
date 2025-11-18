@@ -14,12 +14,18 @@ jobs:
             echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
 
       - run:
+          name: Show repo structure (debug)
+          command: |
+            pwd
+            ls -R
+
+      - run:
           name: Build images
           command: |
             # Reverse proxy
             docker build \
               -t "$DOCKERHUB_USERNAME"/reverseproxy:latest \
-              ./reverseproxy
+              ./udagram-reverseproxy
 
             # User service
             docker build \
