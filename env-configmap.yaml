@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-config
+data:
+  POSTGRES_HOST: "database-1.cymt4c8h6iwi.us-east-1.rds.amazonaws.com"
+  POSTGRES_DB: "postgres"
+  AWS_BUCKET: "udagram-876245393170-dev"
+  AWS_REGION: "us-east-1"
+  AWS_PROFILE: "nanodegree_admin_user"
+  URL: "http://localhost:8100"
